@@ -8,14 +8,14 @@ const { test, registerUser, loginUser, getProfile, logoutUser } = require('../co
 router.use(
     cors({
         credentials: true,
-        origin : 'https://expensereactapp.netlify.app/api'
+        origin : 'https://expensereactapp.netlify.app'
     })
 )
 
-router.post('/signup', registerUser)
-router.post('/signin', loginUser)
-router.get('/profile', getProfile)
-router.get('/logout', logoutUser)
+router.post('/api/signup', registerUser)
+router.post('/api//signin', loginUser)
+router.get('/api//profile', getProfile)
+router.get('/api//logout', logoutUser)
 
 
 
