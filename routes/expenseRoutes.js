@@ -6,7 +6,7 @@ const { addExpense, getExpenses, deleteExpense } = require("../controllers/expen
 router.use(
     cors({
         credentials: true,
-        origin: 'https://expensereactapp.netlify.app'
+        origin: 'https://expensereactapp.netlify.app/api'
     })
 )
 
