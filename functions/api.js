@@ -13,7 +13,7 @@ const corsOptions = {
   credentials: true // Allow sending cookies across domains
 }
 // Apply the CORS middleware to all routes in your router
-router.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(cookieParser());
