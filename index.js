@@ -20,9 +20,9 @@ try {
     console.error("UNABLE TO CONNECT", error);
 }
 
-app.use('/',(req,res)=>{
-    res.send("app is running")
-})
+// app.use('/',(req,res)=>{
+//     res.send("app is running")
+// })
 app.use('/.netlify/functions/api', require('./routes/authRoutes'))
 app.use('/.netlify/functions/api', require('./routes/budgetRoute'))
 app.use('/.netlify/functions/api', require('./routes/expenseRoutes'))
