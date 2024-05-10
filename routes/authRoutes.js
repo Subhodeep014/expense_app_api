@@ -13,9 +13,9 @@ router.use(
 )
 
 router.post('/api/signup', registerUser)
-router.post('/api//signin', loginUser)
-router.get('/api//profile', getProfile)
-router.get('/api//logout', logoutUser)
+router.post('/api/signin', loginUser)
+router.get('/api/profile', getProfile)
+router.get('/api/logout', logoutUser)
 
 
 
