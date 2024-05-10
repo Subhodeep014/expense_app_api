@@ -5,8 +5,15 @@ const cookieParser = require('cookie-parser');
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
+const cors = require("cors");
+const corsOptions = {
+  origin: 'https://expensereactapp.netlify.app', // Replace with your React app's URL
+  optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+  credentials: true // Allow sending cookies across domains
+}
 
-
+// Apply the CORS middleware to all routes in your router
+router.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({extended: false}))
