@@ -7,7 +7,7 @@ const { createBudget, getbudgets, getBudgetsById, deleteBudget } = require('../c
 router.use(
     cors({
         credentials: true,
-        origin : 'https://expensereactapp.netlify.app'
+        origin : 'https://expensereactapp.netlify.app/api'
     })
 )
 router.post('/addbudget', createBudget)
