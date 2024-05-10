@@ -14,10 +14,10 @@ const corsOptions = {
 // Apply the CORS middleware to all routes in your router
 router.use(cors(corsOptions));
 
-router.post('/api/signup', registerUser)
-router.post('/api/signin', loginUser)
-router.get('/api/profile', getProfile)
-router.get('/api/logout', logoutUser)
+router.post('/signup', registerUser)
+router.post('/signin', loginUser)
+router.get('/profile', getProfile)
+router.get('/logout', logoutUser)
 
 
 
