@@ -27,9 +27,9 @@ try {
     console.error("UNABLE TO CONNECT", error);
 }
 
-app.use('/api/',(req,res)=>{
-    res.send("app is running")
-})
+// app.use('/api/',(req,res)=>{
+//     res.send("app is running")
+// })
 app.use('/api', require('../routes/authRoutes'))
 app.use('/api', require('../routes/budgetRoute'))
 app.use('/api', require('../routes/expenseRoutes'))
