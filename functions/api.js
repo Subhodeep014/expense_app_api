@@ -1,4 +1,5 @@
 const dotenv = require('dotenv').config();
+const cors = require("cors");
 const serverless = require('serverless-http');
 const PORT = process.env.PORT || 8000;
 const cookieParser = require('cookie-parser');
