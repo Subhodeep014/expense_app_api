@@ -87,7 +87,7 @@ const getProfile = (req,res)=>{
 }
 const logoutUser = (req,res)=>{
     try{
-        res.cookie('token', '', { expires: new Date(0) });
+        res.clearCookie('token');
         console.log("hit logout route")
     }catch(error){
         res.json({
