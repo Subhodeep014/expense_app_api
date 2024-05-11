@@ -7,8 +7,15 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 
+const allowedOrigins = ['https://expensereactapp.netlify.app', 'https://expensereactapp.netlify.app/'];
 const corsOptions = {
-  origin: 'https://expensereactapp.netlify.app', // Replace with your React app's URL
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }, // Replace with your React app's URL
   optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
   credentials: true // Allow sending cookies across domains
 }
