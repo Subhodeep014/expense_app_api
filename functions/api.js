@@ -7,7 +7,7 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 
-const allowedOrigins = ['https://expensereactapp.netlify.app', 'https://subhodeep014.github.io/react_expense_app_deploy/','https://subhodeep014.github.io/react_expense_app_deploy','https://expensereactapp.netlify.app/api/logout', 'https://expensereactapp.netlify.app/'];
+const allowedOrigins = ['https://expensereactapp.netlify.app', 'https://subhodeep014.github.io','https://subhodeep014.github.io/react_expense_app_deploy/','https://expensereactapp.netlify.app/api/logout', 'https://expensereactapp.netlify.app/'];
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
