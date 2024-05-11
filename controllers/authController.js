@@ -81,15 +81,21 @@ const getProfile = (req,res)=>{
             res.json(user)   
         })
     }else{
-        res.json(null);
+        res.json("No user found");
     }
 }
 const logoutUser = (req,res)=>{
+    try{
+        res.cookie('token', '', { expires: new Date(0) });
+        console.log("hit logout route")
+        res.redirect("/")
+    }catch(error){
+        res.json({
+            error: "Error while signing out!"
+        })
+    }
 
-     res.cookie('token', '', { expires: new Date(0) });
-    console.log("hit logout route")
-    res.json("Successfully logged out!")
-    res.redirect("/")
+    
 }
 module.exports = {
     test, registerUser, loginUser, getProfile, logoutUser
