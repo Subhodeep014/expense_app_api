@@ -88,8 +88,8 @@ const logoutUser = (req,res)=>{
 
      res.cookie('token', '', { expires: new Date(0) });
     console.log("hit logout route")
-
-    // res.redirect("/")
+    res.json("Successfully logged out!")
+    res.redirect("/")
 }
 module.exports = {
     test, registerUser, loginUser, getProfile, logoutUser
