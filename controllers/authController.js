@@ -59,6 +59,7 @@ const loginUser = async(req,res)=>{
                     res.cookie('token', token, {
                     httpOnly: true,
                     secure: true,
+                    sameSite:'none',
                     maxAge: 604800000, // Expires in 7 days (604800000 milliseconds)
                 }).json(user);
             })
