@@ -88,7 +88,6 @@ const logoutUser = (req,res)=>{
     try{
         res.cookie('token', '', { expires: new Date(0) });
         console.log("hit logout route")
-        res.redirect("/")
     }catch(error){
         res.json({
             error: "Error while signing out!"
