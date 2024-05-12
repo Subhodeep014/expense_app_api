@@ -87,12 +87,11 @@ const getProfile = (req,res)=>{
 }
 const logoutUser = (req,res)=>{
     try{
-        res.clearCookie('token', {domain: 'expenseapi.netlify.app', path:'/'});
+        res.cookie('token', '', { expires: new Date(1), path: '/' });
+
         res.header('Access-Control-Allow-Origin', 'https://subhodeep014.github.io');
         res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
         res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-
-        res.setHeader('Set-Cookie', 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;');
 
         res.status(200).json({ message: "Successfully logged out" });
 
