@@ -89,6 +89,7 @@ const logoutUser = (req,res)=>{
     try{
         res.clearCookie('token');
         console.log("hit logout route")
+        res.header('Access-Control-Allow-Origin', '*'); // Set appropriate origin instead of *
     }catch(error){
         res.json({
             error: "Error while signing out!"
