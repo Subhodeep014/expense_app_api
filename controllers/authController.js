@@ -88,7 +88,7 @@ const getProfile = (req,res)=>{
 const logoutUser = (req,res)=>{
     try{
         res.clearCookie('token');
-        res.header('Access-Control-Allow-Origin', 'https://subhodeep014.github.io/react_expense_app_deploy');
+        res.header('Access-Control-Allow-Origin', 'https://subhodeep014.github.io');
         res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
         res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
         
