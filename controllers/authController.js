@@ -59,7 +59,7 @@ const loginUser = async(req,res)=>{
                     res.cookie('token', token, {
                     httpOnly: true,
                     secure: true,
-                    sameSite:'none',
+                    sameSite:'lax',
                     maxAge: 604800000, // Expires in 7 days (604800000 milliseconds)
                 }).json(user);
             })
@@ -91,7 +91,7 @@ const logoutUser = (req,res)=>{
         res.clearCookie('token', {
         httpOnly: true, // Set to true for HTTP-only cookies
         secure: true, // Set to true for HTTPS
-        sameSite: 'none', // Set the appropriate SameSite value
+        sameSite: 'lax', // Set the appropriate SameSite value
         path: '/' // Set the path for which the cookie should be cleared
       });
 
