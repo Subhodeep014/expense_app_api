@@ -87,7 +87,11 @@ const getProfile = (req,res)=>{
 }
 const logoutUser = (req,res)=>{
     try{
-        res.cookie('token', '', { expires: new Date(1), path: '/', domain: 'expenseapi.netlify.app'});
+        res.cookie('token', '', 
+        {           httpOnly: true,
+                    secure: true,
+                    sameSite:'none',expires: new Date(1), path: '/', domain: 'expenseapi.netlify.app'
+        });
 
         res.header('Access-Control-Allow-Origin', 'https://subhodeep014.github.io');
         res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
