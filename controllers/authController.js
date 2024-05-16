@@ -100,6 +100,7 @@ const logoutUser = (req,res)=>{
         res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
         res.status(200).json({ message: "Successfully logged out" });
+        res.redirect('/');
 
     }catch(error){
         res.json({
